@@ -7,7 +7,6 @@ context('Compra', () => {
         cy.visit('/');
 
         let nomeProduto = 'Faded Short Sleeve T-shirts';
-
         cy.contains(nomeProduto).trigger('mouseover')
 
         cy.contains(nomeProduto)
@@ -22,9 +21,7 @@ context('Compra', () => {
             .should('contain.text', 'Product successfully added to your shopping cart')
 
         cy.get('#layer_cart_product_title').should('contain.text', nomeProduto)
-
         cy.get(".button-container a[href$='controller=order']").click()
-
         cy.get(".cart_navigation a[href$='order&step=1'").click()
 
         // cy.get('#email').type('joaomiguel@email.com.br')
